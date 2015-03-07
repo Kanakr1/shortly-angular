@@ -1,8 +1,11 @@
 <div id='container'>
   <!-- Your html here -->
   <!-- <img src='/redirect_icon.png'/> -->
+  <form>
+    <label>Search Links:</label><input type="text" name="search" ng-model="searchLinks" />
+  </form>
   <ul>
-    <li ng-repeat="link in links" class='info'>
+    <li ng-repeat="link in links | filter:searchLinks" class='info'>
       <div class='visits'><span class='count'>{{link.visits}}</span>Visits</div>
       <div class='title'>{{link.title}}</div>
       <div class='original'>{{link.url}}</div>

@@ -17,9 +17,15 @@ angular.module('shortly.services', [])
 
   var getLinks = function(){
     var linkList = [];
+
     angular.forEach(links, function(link){
       linkList.push(link);
     });
+
+    linkList.sort(function(a, b) {
+      return b.visits - a.visits;
+    });
+
     return linkList;
   };
 

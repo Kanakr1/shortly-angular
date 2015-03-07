@@ -13,6 +13,10 @@
     "angular": "~1.2.18",
     "angular-route": "~1.2.18",
     "angular-mocks": "~1.2.18",
-    "angular-ui-router": "~0.2.13"
+    "angular-ui-router": "~0.2.13",
+    "ngFx": "~1.0.6"
+  },
+  "resolutions": {
+    "angular": "~1.2.18"
   }
 }

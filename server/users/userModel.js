@@ -15,6 +15,11 @@ var UserSchema = new mongoose.Schema({
     type: String,
     required: true
   },
+
+  userlinks: {
+    type: Array
+  },
+
   salt: String
 });
 

@@ -1,8 +1,8 @@
-<div id='container'>
+<div id="container">
 <!-- Your code here -->
   <form ng-submit="newlink()" novalidate class="newlink-form" name="newLink">
       <input class="text" type="url" name="url" ng-model="link.url">
-      <button type="submit" ng-disabled="newLink.$invalid">Shorten</button>
+      <button type="submit" ng-disabled="newLink.$invalid || newLink.$pristine || !link.url.length">Shorten</button>
   </form>
   <!-- <img class='spinner' src='/spiffygif_46x46.gif'> -->
   <div class="message">

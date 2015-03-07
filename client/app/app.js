@@ -36,6 +36,9 @@ angular.module('shortly', [
     // of interceptors. Think of it like middleware for your ajax calls
     $httpProvider.interceptors.push('AttachTokens');
 })
+.config(function($urlRouterProvider){
+  $urlRouterProvider.otherwise('/links');
+})
 .factory('AttachTokens', function ($window) {
   // this is an $httpInterceptor
   // its job is to stop all out going request
@@ -62,15 +65,9 @@ angular.module('shortly', [
   // and send that token to the server to see if it is a real user or hasn't expired
   // if it's not valid, we then redirect back to signin/signup
   $rootScope.$on('$stateChangeStart', function (evt, toState, current) {
-    if (Auth.isAuth()){
-      $rootScope.user = true;
-    }
-
-    if (toState === undefined && !Auth.isAuth()) {
-      $location.path('/signin');
-    } else if ((toState === undefined || !toState.authenticate) && Auth.isAuth()) {
+    if ( !toState.authenticate && Auth.isAuth()) {
       $location.path('/links');
-    } else if (toState.url && toState.originalPath !== '/signup' && toState.authenticate && !Auth.isAuth()) {
+    } else if (toState.authenticate && !Auth.isAuth()) {
       $location.path('/signin');
     }
   });

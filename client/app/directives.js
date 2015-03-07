@@ -4,9 +4,7 @@
     .directive('shortenedLink', function(Links){
       return {
         restrict: 'E',
-        scope: {
-          links: '='
-        },
+        scope: true,
         templateUrl: 'app/linktemplate.html'
       };
     });

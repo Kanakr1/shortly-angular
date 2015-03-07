@@ -9,12 +9,15 @@
     <h1>Shortly</h1>
 
     <!-- the ng-view directive is where our templates will be loaded into when navigated to -->
-    <ul>
+    <ul ng-show="user">
       <li>
         <a href="/#/links">Links</a>
       </li>
       <li>
         <a href="/#/shorten">Shorten Link</a>
+      </li>
+      <li>
+        <a >Logout</a>
       </li>
     </ul>
     <div ng-view></div>

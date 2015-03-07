@@ -1,14 +1,14 @@
 <div id='container'>
 <!-- Your code here -->
-  <form ng-submit="newlink()">
-    <input class='text' type='text' name='url' ng-model="link.url">
-    <input type='submit' value='Shorten'>
+  <form ng-submit="newlink()" novalidate class="newlink-form" name="newLink">
+      <input class="text" type="url" name="url" ng-model="link.url">
+      <button type="submit" ng-disabled="newLink.$invalid">Shorten</button>
   </form>
   <!-- <img class='spinner' src='/spiffygif_46x46.gif'> -->
-  <div class='message'>
-    <div class='title'>{{createdLink.title}}</div>
-    <div class='original'>{{createdLink.url}}</div>
-    <a href='{{createdLink.base_url}}/{{createdLink.code}}'>{{createdLink.base_url}}/{{createdLink.code}}</a>
+  <div class="message">
+    <div class="title">{{createdLink.title}}</div>
+    <div class="original">{{createdLink.url}}</div>
+    <a href="{{createdLink.base_url}}/{{createdLink.code}}">{{createdLink.base_url}}/{{createdLink.code}}</a>
   </div>
 </div>
 

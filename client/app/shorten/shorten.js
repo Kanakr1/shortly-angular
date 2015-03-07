@@ -8,4 +8,5 @@ angular.module('shortly.shorten', [])
       $scope.createdLink = link;
     });
   };
+
 });

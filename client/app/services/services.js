@@ -40,22 +40,11 @@ angular.module('shortly.services', [])
     });
   };
 
-  var redirect = function(link){
-    return $http({
-      method: 'GET',
-      url: '/api/links/' + link.code,
-      data: link
-    })
-    .then(function(resp) {
-      return resp.data;
-    });
-  };
 
   return {
     findLinks: findLinks,
     getLinks: getLinks,
-    saveUrl: saveUrl,
-    redirect: redirect
+    saveUrl: saveUrl
   };
 
 })

@@ -5,11 +5,6 @@
     <label>Search Links:</label><input type="text" name="search" ng-model="searchLinks" />
   </form>
   <ul>
-    <li ng-repeat="link in links | filter:searchLinks" class='info'>
-      <div class='visits'><span class='count'>{{link.visits}}</span>Visits</div>
-      <div class='title'>{{link.title}}</div>
-      <div class='original'>{{link.url}}</div>
-      <a href="{{link.base_url}}/api/links/{{link.code}}">{{link.base_url}}/api/links/{{link.code}}</a>
-    </li>
+    <shortened-link links="links"></shortened-link>
   </ul>
 </div>

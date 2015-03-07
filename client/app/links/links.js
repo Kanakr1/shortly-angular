@@ -9,8 +9,8 @@ angular.module('shortly.links', [])
   };
   findLinks();
 
-  $scope.redirect = function(link){
-    Links.redirect(link);
-  };
+  // $scope.redirect = function(link){
+  //   Links.redirect(link);
+  // };
 
 }]);
